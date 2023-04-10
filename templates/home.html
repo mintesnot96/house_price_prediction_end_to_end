@@ -9,41 +9,104 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <style>
-  form,h1 {
-    margin: auto;
-    width: 50%; /* You can adjust the width to your liking */
+  body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
   }
+  h2 {
+    background-color: #37474F;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  form {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    width: 90%;
+  }
+  label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #37474F;
+    font-weight: bold;
+  }
+  input[type="number"] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+  }
+  input[type="submit"] {
+    background-color: #37474F;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+  input[type="submit"]:hover {
+    background-color: #263238;
+  }
+  
 </style>
   
 </head>
 
 <body>
  <div class="login">
-	<h1>House Price Prediction</h1>
-   <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
+      <h2>House Price Prediction</h2>
+      <br>
+      <label style="display: inline-block; width: 70px; text-align: right;">CRIM: </label>
       <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-        <input type="text" name="RM" placeholder="RM" required="required" /><br>
-        <input type="text" name="Age" placeholder="Age" required="required" /><br>
-        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-        <input type="text" name="B" placeholder="B" required="required" /><br>
-        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    	<label style="display: inline-block; width: 70px; text-align: right;">ZN: </label>
+      <input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+      <label style="display: inline-block; width: 70px; text-align: right;">INDUS: </label>
+      <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+      <label style="display: inline-block; width: 70px; text-align: right;">CHAS: </label>
+       <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">NOX: </label>
+       <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">RM: </label>
+       <input type="text" name="RM" placeholder="RM" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">AGE: </label>
+       <input type="text" name="Age" placeholder="Age" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">DIS: </label>
+       <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">RAD: </label>
+       <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">TAX: </label>
+       <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">PT/R: </label> 
+       <input type="text" name="PTRATIO" placeholder="PTRATIO " required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">B: </label> 
+       <input type="text" name="B" placeholder="B" required="required" /><br>
+       <label style="display: inline-block; width: 70px; text-align: right;">LSTAT: </label> 
+       <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="display: inline-block">Predict</button> 
+        <label>{{prediction_text}}</label>
+        
     </form>
 
    <br>
    <br>
   
    
- </div>
- {{prediction_text}}
+ <!-- </div>
+ {{prediction_text}} -->
 
 </body>
 </html>
