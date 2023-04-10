@@ -1,9 +1,7 @@
 import pickle
-from flask import Flask, request, app,jsonify,url_for,render_template
-import pandas as pd
+from flask import Flask, request, app,jsonify,render_template
 import numpy as np
 app=Flask(__name__)
-import sklearn
 # load the model file
 regmodel=pickle.load(open('regmodel.pkl','rb'))
 scalar=pickle.load(open('scaling.pkl','rb'))
