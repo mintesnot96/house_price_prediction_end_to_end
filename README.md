@@ -12,3 +12,4 @@ Create a new environment
 ```
 conda create -p venv python==3.7 -y
 ```
+<img width="497" alt="Screenshot" src="https://user-images.githubusercontent.com/96992238/230989576-ec8f2f62-1a01-4b75-a97f-e345e7fbc7cf.png">
